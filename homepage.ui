@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>0</y>
      <width>1391</width>
-     <height>721</height>
+     <height>731</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -36,13 +36,13 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget{border-image: url(:/back/image/HangingBasket.jpg);}</string>
+     <string notr="true">#widget{border-image: url(:/back/image/left.png);}</string>
     </property>
     <widget class="QPushButton" name="WestLeft">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>160</y>
+       <x>60</x>
+       <y>240</y>
        <width>91</width>
        <height>31</height>
       </rect>
@@ -53,14 +53,14 @@ font: 87 10pt &quot;Arial&quot;;
 background-image: url(:/back/image/BG.jpg);</string>
      </property>
      <property name="text">
-      <string>北7测点</string>
+      <string>东1测点</string>
      </property>
     </widget>
     <widget class="QPushButton" name="WestSouth">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>320</y>
+       <x>140</x>
+       <y>380</y>
        <width>75</width>
        <height>31</height>
       </rect>
@@ -71,14 +71,14 @@ font: 87 10pt &quot;Arial&quot;;
 background-image: url(:/back/image/BG.jpg);</string>
      </property>
      <property name="text">
-      <string>西5测点</string>
+      <string>东2吊杆</string>
      </property>
     </widget>
     <widget class="QPushButton" name="EastSouth">
      <property name="geometry">
       <rect>
-       <x>350</x>
-       <y>310</y>
+       <x>320</x>
+       <y>390</y>
        <width>71</width>
        <height>31</height>
       </rect>
@@ -89,14 +89,14 @@ font: 87 10pt &quot;Arial&quot;;
 background-image: url(:/back/image/BG.jpg);</string>
      </property>
      <property name="text">
-      <string>南3测点</string>
+      <string>南4吊杆</string>
      </property>
     </widget>
     <widget class="QPushButton" name="EastNorth">
      <property name="geometry">
       <rect>
-       <x>450</x>
-       <y>200</y>
+       <x>360</x>
+       <y>230</y>
        <width>81</width>
        <height>31</height>
       </rect>
@@ -107,7 +107,7 @@ font: 87 10pt &quot;Arial&quot;;
 background-image: url(:/back/image/BG.jpg);</string>
      </property>
      <property name="text">
-      <string>东1测点</string>
+      <string>南3测点</string>
      </property>
     </widget>
    </widget>
@@ -121,7 +121,7 @@ background-image: url(:/back/image/BG.jpg);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#widget_2{border-image: url(:/back/image/HangingBasket.jpg);}</string>
+     <string notr="true">#widget_2{border-image: url(:/back/image/right.png);}</string>
     </property>
     <widget class="QPushButton" name="WestLeft_1">
      <property name="geometry">
@@ -138,7 +138,7 @@ font: 87 10pt &quot;Arial&quot;;
 background-image: url(:/back/image/BG1.jpg);</string>
      </property>
      <property name="text">
-      <string>北8吊杆</string>
+      <string>西5测点</string>
      </property>
     </widget>
     <widget class="QPushButton" name="WestSouth_1">
@@ -174,7 +174,7 @@ font: 87 10pt &quot;Arial&quot;;
 background-image: url(:/back/image/BG1.jpg);</string>
      </property>
      <property name="text">
-      <string>东2吊杆</string>
+      <string>北7测点</string>
      </property>
     </widget>
     <widget class="QPushButton" name="EastSouth_1">
@@ -192,7 +192,7 @@ font: 87 10pt &quot;Arial&quot;;
 background-image: url(:/back/image/BG1.jpg);</string>
      </property>
      <property name="text">
-      <string>南4吊杆</string>
+      <string>北8吊杆</string>
      </property>
     </widget>
    </widget>

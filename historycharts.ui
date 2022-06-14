@@ -84,7 +84,7 @@ color: rgb(255, 255, 255);</string>
       <widget class="QCustomPlot" name="widget_3" native="true">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>40</x>
          <y>30</y>
          <width>591</width>
          <height>411</height>
@@ -125,18 +125,18 @@ color: rgb(255, 255, 255);</string>
      <widget class="QWidget" name="widget_16" native="true">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>210</x>
         <y>0</y>
-        <width>641</width>
+        <width>891</width>
         <height>41</height>
        </rect>
       </property>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="">
        <property name="geometry">
         <rect>
-         <x>51</x>
-         <y>11</y>
-         <width>575</width>
+         <x>52</x>
+         <y>10</y>
+         <width>811</width>
          <height>29</height>
         </rect>
        </property>
@@ -218,18 +218,18 @@ background-image: url(:/back/image/mybackgroundimage.jpg);</string>
      <widget class="QWidget" name="widget_11" native="true">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>210</x>
         <y>0</y>
-        <width>641</width>
+        <width>891</width>
         <height>41</height>
        </rect>
       </property>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="">
        <property name="geometry">
         <rect>
-         <x>51</x>
-         <y>11</y>
-         <width>575</width>
+         <x>52</x>
+         <y>12</y>
+         <width>811</width>
          <height>29</height>
         </rect>
        </property>
@@ -381,12 +381,12 @@ color: rgb(0, 0, 0);</string>
     </property>
     <item>
      <property name="text">
-      <string>    挂 篮 1</string>
+      <string>    挂 篮 东</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>    挂 篮 2</string>
+      <string>    挂 篮 西</string>
      </property>
     </item>
    </widget>
@@ -409,7 +409,7 @@ color: rgb(0, 0, 0);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>东1测点、北7测点</string>
+          <string>东1测点、东2吊杆</string>
          </property>
         </widget>
        </item>
@@ -448,7 +448,7 @@ background-image: url(:/back/image/mybackgroundimage.jpg);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>南3测点、西5测点</string>
+          <string>西5测点、西6吊杆</string>
          </property>
         </widget>
        </item>
@@ -499,7 +499,7 @@ background-image: url(:/back/image/mybackgroundimage.jpg);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>东2吊杆、北8吊杆</string>
+          <string>南3测点、南4吊杆</string>
          </property>
         </widget>
        </item>
@@ -538,7 +538,7 @@ background-image: url(:/back/image/mybackgroundimage.jpg);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>南4吊杆、西6吊杆</string>
+          <string>北7测点、北8吊杆</string>
          </property>
         </widget>
        </item>

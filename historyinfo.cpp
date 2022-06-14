@@ -59,7 +59,7 @@ HistoryInfo::HistoryInfo(QWidget *parent) :
     ui->tableWidget_2->setRowCount(8);
     ui->tableWidget_2->setColumnCount(2);
     ui->tableWidget_2->setWindowTitle("QTableWidget & Item");
-    ui->tableWidget_2->resize(1000, 300);  //设置表格
+    ui->tableWidget_2->resize(1000, 350);  //设置表格
 
     ui->tableWidget_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     QStringList header1;
@@ -76,6 +76,11 @@ HistoryInfo::HistoryInfo(QWidget *parent) :
     ui->tableWidget_2->horizontalHeader()->setStyleSheet( "QHeaderView::section {background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\
                                                           stop:0 #00007f, stop: 0.5 #00007f,stop: 0.6 #00007f, stop:1 #00007f);color: white;}");
 
+
+//设置行序列背景色
+    ui->tableWidget_2->verticalHeader()->setStyleSheet( "QHeaderView::section {background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\
+                                              stop:0 #00007f, stop: 0.5 #00007f,stop: 0.6 #00007f, stop:1 #00007f);color: white;}");
+//设置表格左上角相交单元格颜色
 //导填充入数据
 for(int i=0;i<8;i++)
 {
@@ -87,6 +92,7 @@ for(int i=0;i<8;i++)
 
 }
 
+    ui->tableWidget_2->setEditTriggers(QAbstractItemView::NoEditTriggers);
 //        ui->tableWidget_2->setItem(0,1,new QTableWidgetItem("35"));
 //        ui->tableWidget_2->setItem(1,1,new QTableWidgetItem("36"));
 //        ui->tableWidget_2->setItem(2,1,new QTableWidgetItem("32"));

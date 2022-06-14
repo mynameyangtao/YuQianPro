@@ -28,7 +28,7 @@ Widget::Widget(QWidget *parent) :
 
     connect(this,SIGNAL(send_datas_down(QString)),test_info,SLOT(receive_data_down(QString)));
 
-    setWindowTitle("德岭软件");
+    setWindowTitle("德岭软件 v1.1");
     setFixedSize(800,500);
     ui->PassWorld_Edit->setEchoMode(QLineEdit::Password);
 

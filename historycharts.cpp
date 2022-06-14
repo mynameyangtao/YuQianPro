@@ -60,10 +60,10 @@ HistoryCharts::HistoryCharts(QWidget *parent) :
 //    init_paint(ui->widget_5,cut_timestamp,"西左测点","西右测点");
 //    init_paint(ui->widget_6,cut_timestamp,"西左吊杆","西右吊杆");
 
-    init_paint(ui->widget_3,cut_timestamp,"东1测点","东2吊杆");
-    init_paint(ui->widget_4,cut_timestamp,"北7测点","北8吊杆");
-    init_paint(ui->widget_5,cut_timestamp,"南3测点","南4吊杆");
-    init_paint(ui->widget_6,cut_timestamp,"西5测点","西6吊杆");
+    init_paint(ui->widget_3,cut_timestamp,"东1测点","南3测点");
+    init_paint(ui->widget_4,cut_timestamp,"东2吊杆","南4吊杆");
+    init_paint(ui->widget_5,cut_timestamp,"西5测点","北7测点");
+    init_paint(ui->widget_6,cut_timestamp,"西6吊杆","北8吊杆");
 
 
 
@@ -480,38 +480,6 @@ int HistoryCharts::update_data(QNetworkReply *reply)
                         //                        if(MySaves.pointName=="东右测点")
                         if(MySaves.pointName=="东2吊杆")
                         {
-                            ui->widget_3->graph(1)->data().data()->clear();//清除
-
-                            for(int j=0;j<size_list;j++)
-                            {
-                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
-                                if(MySaves.phy=="应变变化值")
-                                {
-                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
-                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
-                                    int my_num=sec_arr.size();
-
-
-                                    for(int s=0;s<my_num;s++)
-                                    {
-                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
-                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
-                                        //
-                                    }
-                                }
-
-
-                            }
-
-                            update_plot(ui->widget_3,x1,y1,1);
-                            x1.clear();
-                            y1.clear();
-
-                        }
-
-                        //                        if(MySaves.pointName=="东左吊杆")
-                        if(MySaves.pointName=="北7测点")
-                        {
                             ui->widget_4->graph(0)->data().data()->clear();//清除
 
                             for(int j=0;j<size_list;j++)
@@ -538,76 +506,11 @@ int HistoryCharts::update_data(QNetworkReply *reply)
                             update_plot(ui->widget_4,x1,y1,0);
                             x1.clear();
                             y1.clear();
-                        }
-
-                        //                        if(MySaves.pointName=="东右吊杆")
-                        if(MySaves.pointName=="北8吊杆")
-                        {
-                            ui->widget_4->graph(1)->data().data()->clear();//清除
-
-                            for(int j=0;j<size_list;j++)
-                            {
-                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
-                                if(MySaves.phy=="应变变化值")
-                                {
-                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
-                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
-                                    int my_num=sec_arr.size();
-
-
-                                    for(int s=0;s<my_num;s++)
-                                    {
-                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
-                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
-                                        //
-                                    }
-                                }
-
-
-                            }
-
-                            update_plot(ui->widget_4,x1,y1,1);
-                            x1.clear();
-                            y1.clear();
 
                         }
 
-                        //数据异常 未接受到应变变化值
-                        //                        if(MySaves.pointName=="西左测点")
-                        if(MySaves.pointName=="南3测点")
-                        {
-                            ui->widget_5->graph(0)->data().data()->clear();//清除
-
-                            for(int j=0;j<size_list;j++)
-                            {
-                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
-                                if(MySaves.phy=="应变变化值")
-                                {
-                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
-                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
-                                    int my_num=sec_arr.size();
-
-
-                                    for(int s=0;s<my_num;s++)
-                                    {
-                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
-                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
-                                        //
-                                    }
-                                }
-
-
-                            }
-
-                            update_plot(ui->widget_5,x1,y1,0);
-                            x1.clear();
-                            y1.clear();
-                        }
-
-
-
-                        //                        if(MySaves.pointName=="西右测点")
-                        if(MySaves.pointName=="南4吊杆")
+                        //                        if(MySaves.pointName=="东左吊杆")
+                        if(MySaves.pointName=="北7测点")
                         {
                             ui->widget_5->graph(1)->data().data()->clear();//清除
 
@@ -637,46 +540,8 @@ int HistoryCharts::update_data(QNetworkReply *reply)
                             y1.clear();
                         }
 
-                        //数据异常 未接受到应变变化值
-                        //                        if(MySaves.pointName=="西左吊杆")
-                        if(MySaves.pointName=="西5测点")
-                        {
-                            ui->widget_6->graph(0)->data().data()->clear();//清除
-
-                            for(int j=0;j<size_list;j++)
-                            {
-                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
-                                if(MySaves.phy=="应变变化值")
-                                {
-                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
-                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
-                                    int my_num=sec_arr.size();
-
-
-                                    for(int s=0;s<my_num;s++)
-                                    {
-
-
-                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
-                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
-                                        //
-
-                                    }
-                                }
-
-
-                            }
-
-                            update_plot(ui->widget_6,x1,y1,0);
-                            x1.clear();
-                            y1.clear();
-                        }
-
-
-
-
-                        //                        if(MySaves.pointName=="西右吊杆")
-                        if(MySaves.pointName=="西6吊杆")
+                        //                        if(MySaves.pointName=="东右吊杆")
+                        if(MySaves.pointName=="北8吊杆")
                         {
                             ui->widget_6->graph(1)->data().data()->clear();//清除
 
@@ -702,6 +567,141 @@ int HistoryCharts::update_data(QNetworkReply *reply)
                             }
 
                             update_plot(ui->widget_6,x1,y1,1);
+                            x1.clear();
+                            y1.clear();
+
+                        }
+
+                        //数据异常 未接受到应变变化值
+                        //                        if(MySaves.pointName=="西左测点")
+                        if(MySaves.pointName=="南3测点")
+                        {
+                            ui->widget_3->graph(1)->data().data()->clear();//清除
+
+                            for(int j=0;j<size_list;j++)
+                            {
+                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
+                                if(MySaves.phy=="应变变化值")
+                                {
+                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
+                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
+                                    int my_num=sec_arr.size();
+
+
+                                    for(int s=0;s<my_num;s++)
+                                    {
+                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
+                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
+                                        //
+                                    }
+                                }
+
+
+                            }
+
+                            update_plot(ui->widget_3,x1,y1,1);
+                            x1.clear();
+                            y1.clear();
+                        }
+
+
+
+                        //                        if(MySaves.pointName=="西右测点")
+                        if(MySaves.pointName=="南4吊杆")
+                        {
+                            ui->widget_4->graph(1)->data().data()->clear();//清除
+
+                            for(int j=0;j<size_list;j++)
+                            {
+                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
+                                if(MySaves.phy=="应变变化值")
+                                {
+                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
+                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
+                                    int my_num=sec_arr.size();
+
+
+                                    for(int s=0;s<my_num;s++)
+                                    {
+                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
+                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
+                                        //
+                                    }
+                                }
+
+
+                            }
+
+                            update_plot(ui->widget_4,x1,y1,1);
+                            x1.clear();
+                            y1.clear();
+                        }
+
+                        //数据异常 未接受到应变变化值
+                        //                        if(MySaves.pointName=="西左吊杆")
+                        if(MySaves.pointName=="西5测点")
+                        {
+                            ui->widget_5->graph(0)->data().data()->clear();//清除
+
+                            for(int j=0;j<size_list;j++)
+                            {
+                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
+                                if(MySaves.phy=="应变变化值")
+                                {
+                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
+                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
+                                    int my_num=sec_arr.size();
+
+
+                                    for(int s=0;s<my_num;s++)
+                                    {
+
+
+                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
+                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
+                                        //
+
+                                    }
+                                }
+
+
+                            }
+
+                            update_plot(ui->widget_5,x1,y1,0);
+                            x1.clear();
+                            y1.clear();
+                        }
+
+
+
+
+                        //                        if(MySaves.pointName=="西右吊杆")
+                        if(MySaves.pointName=="西6吊杆")
+                        {
+                            ui->widget_6->graph(0)->data().data()->clear();//清除
+
+                            for(int j=0;j<size_list;j++)
+                            {
+                                MySaves.phy=list_arr.at(j).toObject().value("phy").toString();
+                                if(MySaves.phy=="应变变化值")
+                                {
+                                    QJsonArray sec_arr=list_arr.at(j).toObject().value("datas").toArray();
+                                    qDebug()<<"获取到的值为数组大小："<<sizeof(sec_arr);
+                                    int my_num=sec_arr.size();
+
+
+                                    for(int s=0;s<my_num;s++)
+                                    {
+                                        x1.push_back(QDateTime::fromString(sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19), "yyyy-MM-dd hh:mm:ss").toTime_t());
+                                        y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
+                                        //
+                                    }
+                                }
+
+
+                            }
+
+                            update_plot(ui->widget_6,x1,y1,0);
                             x1.clear();
                             y1.clear();
                         }
@@ -941,21 +941,21 @@ void HistoryCharts::on_pushButton_5_clicked()
 //东左
 void HistoryCharts::on_pushButton_3_clicked()
 {
-    ui->widget_3->graph(1)->setVisible(true);
-    ui->widget_4->graph(1)->setVisible(true);
-    ui->widget_3->replot();
-    ui->widget_4->replot();
+    ui->widget_5->graph(0)->setVisible(true);
+    ui->widget_6->graph(0)->setVisible(true);
+    ui->widget_5->replot();
+    ui->widget_6->replot();
 }
 
 void HistoryCharts::on_pushButton_4_clicked()
 {
     //    ui->widget_3->graph(1)->hide();
-    ui->widget_3->graph(1)->setVisible(false);//隐藏曲线
+    ui->widget_5->graph(0)->setVisible(false);//隐藏曲线
     //    graph(1)->setVisible(true);//显示曲线
 
-    ui->widget_4->graph(1)->setVisible(false);//隐藏曲线
-    ui->widget_4->replot();
-    ui->widget_3->replot();
+    ui->widget_6->graph(0)->setVisible(false);//隐藏曲线
+    ui->widget_6->replot();
+    ui->widget_5->replot();
 
 }
 //东右
@@ -978,33 +978,33 @@ void HistoryCharts::on_pushButton_2_clicked()
 //西左显示
 void HistoryCharts::on_pushButton_7_clicked()
 {
-    ui->widget_5->graph(1)->setVisible(true);
-    ui->widget_6->graph(1)->setVisible(true);
-    ui->widget_5->replot();
-    ui->widget_6->replot();
+    ui->widget_3->graph(1)->setVisible(true);
+    ui->widget_4->graph(1)->setVisible(true);
+    ui->widget_3->replot();
+    ui->widget_4->replot();
 }
 //西左隐藏
 void HistoryCharts::on_pushButton_9_clicked()
 {
-    ui->widget_5->graph(1)->setVisible(false);
-    ui->widget_6->graph(1)->setVisible(false);
-    ui->widget_5->replot();
-    ui->widget_6->replot();
+    ui->widget_3->graph(1)->setVisible(false);
+    ui->widget_4->graph(1)->setVisible(false);
+    ui->widget_3->replot();
+    ui->widget_4->replot();
 }
 
 //西右显示
 void HistoryCharts::on_pushButton_8_clicked()
 {
-    ui->widget_5->graph(0)->setVisible(true);
-    ui->widget_6->graph(0)->setVisible(true);
+    ui->widget_5->graph(1)->setVisible(true);
+    ui->widget_6->graph(1)->setVisible(true);
     ui->widget_5->replot();
     ui->widget_6->replot();
 }
 //西右隐藏
 void HistoryCharts::on_pushButton_10_clicked()
 {
-    ui->widget_5->graph(0)->setVisible(false);
-    ui->widget_6->graph(0)->setVisible(false);
+    ui->widget_5->graph(1)->setVisible(false);
+    ui->widget_6->graph(1)->setVisible(false);
     ui->widget_5->replot();
     ui->widget_6->replot();
 }

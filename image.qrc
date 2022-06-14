@@ -11,5 +11,8 @@
         <file>image/HangingBasket.jpg</file>
         <file>image/BG.jpg</file>
         <file>image/BG1.jpg</file>
+        <file>image/123.jpg</file>
+        <file>image/right.png</file>
+        <file>image/left.png</file>
     </qresource>
 </RCC>

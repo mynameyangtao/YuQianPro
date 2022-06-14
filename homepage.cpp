@@ -6,7 +6,7 @@ HomePage::HomePage(QWidget *parent) :
     ui(new Ui::HomePage)
 {
     ui->setupUi(this);
-
+    setWindowTitle("德岭软件 v1.1");
     //    content_1=new Contents();
 
 

@@ -74,7 +74,7 @@ Contents::Contents(QWidget *parent) :
     ui(new Ui::Contents)
 {
     ui->setupUi(this);
-    setWindowTitle("德岭软件");
+    setWindowTitle("德岭软件 v1.1");
     this->setFixedSize(1471,801);
     //***************************************************
     //获取信息 http链接
@@ -649,7 +649,7 @@ int Contents::update_data(QNetworkReply *reply)
                                             info_error="东1测点异常";
                                             info_error1="东1测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
                                             info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
-                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
                                             ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
@@ -711,6 +711,12 @@ int Contents::update_data(QNetworkReply *reply)
                                         y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
                                         if((sec_arr.at(s).toObject().value("data").toDouble()<-1000||sec_arr.at(s).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+1).toObject().value("data").toDouble()<-1000||sec_arr.at(s+1).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+2).toObject().value("data").toDouble()<-1000||sec_arr.at(s+2).toObject().value("data").toDouble()>1000))//判断连着三条数据是否异常
                                         {
+//                                            historyinfo->setText(0,"异常");
+                                            info_error="东2测点异常";
+                                            info_error1="东2测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
+                                            info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+                                            ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
                                             icon2.addFile(":/back/image/red_img.jpg");//添加图形，将加载进来的资源进行保存
@@ -768,6 +774,12 @@ int Contents::update_data(QNetworkReply *reply)
                                         y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
                                         if((sec_arr.at(s).toObject().value("data").toDouble()<-1000||sec_arr.at(s).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+1).toObject().value("data").toDouble()<-1000||sec_arr.at(s+1).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+2).toObject().value("data").toDouble()<-1000||sec_arr.at(s+2).toObject().value("data").toDouble()>1000))//判断连着三条数据是否异常
                                         {
+//                                            historyinfo->setText(0,"异常");
+                                            info_error="北7测点异常";
+                                            info_error1="北7测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
+                                            info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+                                            ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
                                             icon2.addFile(":/back/image/red_img.jpg");//添加图形，将加载进来的资源进行保存
@@ -824,6 +836,12 @@ int Contents::update_data(QNetworkReply *reply)
                                         y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
                                         if((sec_arr.at(s).toObject().value("data").toDouble()<-1000||sec_arr.at(s).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+1).toObject().value("data").toDouble()<-1000||sec_arr.at(s+1).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+2).toObject().value("data").toDouble()<-1000||sec_arr.at(s+2).toObject().value("data").toDouble()>1000))//判断连着三条数据是否异常
                                         {
+//                                            historyinfo->setText(0,"异常");
+                                            info_error="北8测点异常";
+                                            info_error1="北8测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
+                                            info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+                                            ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
                                             icon2.addFile(":/back/image/red_img.jpg");//添加图形，将加载进来的资源进行保存
@@ -882,6 +900,12 @@ int Contents::update_data(QNetworkReply *reply)
                                         y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
                                         if((sec_arr.at(s).toObject().value("data").toDouble()<-1000||sec_arr.at(s).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+1).toObject().value("data").toDouble()<-1000||sec_arr.at(s+1).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+2).toObject().value("data").toDouble()<-1000||sec_arr.at(s+2).toObject().value("data").toDouble()>1000))//判断连着三条数据是否异常
                                         {
+//                                            historyinfo->setText(0,"异常");
+                                            info_error="南3测点异常";
+                                            info_error1="南3测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
+                                            info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+                                            ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
                                             icon2.addFile(":/back/image/red_img.jpg");//添加图形，将加载进来的资源进行保存
@@ -941,6 +965,12 @@ int Contents::update_data(QNetworkReply *reply)
                                         y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
                                         if((sec_arr.at(s).toObject().value("data").toDouble()<-1000||sec_arr.at(s).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+1).toObject().value("data").toDouble()<-1000||sec_arr.at(s+1).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+2).toObject().value("data").toDouble()<-1000||sec_arr.at(s+2).toObject().value("data").toDouble()>1000))//判断连着三条数据是否异常
                                         {
+//                                            historyinfo->setText(0,"异常");
+                                            info_error="南4测点异常";
+                                            info_error1="南4测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
+                                            info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+                                            ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
                                             icon2.addFile(":/back/image/red_img.jpg");//添加图形，将加载进来的资源进行保存
@@ -998,6 +1028,12 @@ int Contents::update_data(QNetworkReply *reply)
                                         y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
                                         if((sec_arr.at(s).toObject().value("data").toDouble()<-1000||sec_arr.at(s).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+1).toObject().value("data").toDouble()<-1000||sec_arr.at(s+1).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+2).toObject().value("data").toDouble()<-1000||sec_arr.at(s+2).toObject().value("data").toDouble()>1000))//判断连着三条数据是否异常
                                         {
+                                            historyinfo->setText(0,"异常");
+                                            info_error="西5测点异常";
+                                            info_error1="西5测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
+                                            info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+                                            ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
                                             icon2.addFile(":/back/image/red_img.jpg");//添加图形，将加载进来的资源进行保存
@@ -1057,6 +1093,12 @@ int Contents::update_data(QNetworkReply *reply)
                                         y1.push_back(sec_arr.at(my_num - 1 - s).toObject().value("data").toDouble());
                                         if((sec_arr.at(s).toObject().value("data").toDouble()<-1000||sec_arr.at(s).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+1).toObject().value("data").toDouble()<-1000||sec_arr.at(s+1).toObject().value("data").toDouble()>1000)&&(sec_arr.at(s+2).toObject().value("data").toDouble()<-1000||sec_arr.at(s+2).toObject().value("data").toDouble()>1000))//判断连着三条数据是否异常
                                         {
+//                                            historyinfo->setText(0,"异常");
+                                            info_error="西6测点异常";
+                                            info_error1="西6测点异常"+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19)+sec_arr.at(s).toObject().value("data").toString();
+                                            info_error.append("时间是："+sec_arr.at(my_num - 1 - s).toObject().value("data_time").toString().mid(0,19));
+//                                            info_error.append("数据是："+sec_arr.at(s).toObject().value("data").toString());
+                                            ui->textEdit->setText(info_error);
                                             //********************************************************************设置异常指示灯部分
                                             QIcon icon2;
                                             icon2.addFile(":/back/image/red_img.jpg");//添加图形，将加载进来的资源进行保存

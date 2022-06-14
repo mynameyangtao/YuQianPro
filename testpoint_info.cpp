@@ -228,6 +228,11 @@ void TestPoint_Info::on_pushButton_5_clicked()//下载按钮
         QMessageBox::warning(this, "warning", "初始时间不能大于结束时间！", QMessageBox::Yes |QMessageBox::Yes);
         ui->pushButton_5->setEnabled(true);
     }
+    else if(validLicenseDays_sec==0)
+    {
+        QMessageBox::warning(this, "warning", "查询时间输入有误！", QMessageBox::Yes |QMessageBox::Yes);
+        ui->pushButton_5->setEnabled(true);
+    }
     //    else if(num_time>7200)
     else if(validLicenseDays_sec>5*24*60*60)
     {
